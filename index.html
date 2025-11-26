@@ -8,15 +8,16 @@
   </head>
 
   <body class="page-body page-body-strawberry">
+
     <header class="page-header">
       <nav class="navigation">
-        <a class="logo">
+        <a class="logo" href="index.html" aria-current="page">
           <img class="logo-img" src="./images/logo.svg" width="137" height="56" alt="Седона">
         </a>
 
         <ul class="site-menu">
           <li class="site-menu-item">
-            <a class="site-menu-link site-menu-link--has-submenu" href="#">Каталог</a>
+            <a class="site-menu-link site-menu-link--has-submenu" href="index.html" aria-current="page">Каталог</a>
           </li>
           <li class="site-menu-item">
             <a class="site-menu-link" href="#">Доставка и оплата</a>
@@ -235,11 +236,10 @@
     </div>
 
     <section class="delivery">
-      <h2 class="visually-hidden">Доставка</h2>
 
       <div class="delivery-grid">
         <div class="delivery-wrapper">
-          <p class="delivery-title section-title">Доставка любимого мороженого на дом</p>
+          <h2 class="delivery-title section-title">Доставка любимого мороженого на дом</h2>
           <p class="delivery-description">Хочется полакомиться любимым десертом, но нет времени съездить в магазин?
             Закажите доставку мороженого на дом, и курьер привезёт вам ваш заказ в течение часа!</p>
         </div>
@@ -299,17 +299,17 @@
         <ul class="footer-social social">
           <li class="social-item">
             <a class="social-link" href="https://t.me/htmlacademy">
-              <span class="visually-hidden">Telegram</span>
+              <span class="visually-hidden" lang="en">Telegram</span>
             </a>
           </li>
           <li class="social-item">
             <a class="social-link" href="https://vk.com/htmlacademy">
-              <span class="visually-hidden">Vkontakte</span>
+              <span class="visually-hidden">Вконтакте</span>
             </a>
           </li>
           <li class="social-item">
             <a class="social-link" href="https://www.youtube.com/user/htmlacademyru">
-              <span class="visually-hidden">YouTube</span>
+              <span class="visually-hidden" lang="en">YouTube</span>
             </a>
           </li>
         </ul>
@@ -331,11 +331,13 @@
           </ul>
         </nav>
 
-        <div class="footer-copyright">
+        <div class="footer-copyright copyright">
           <!-- svg-logo -->
-          <p class="footer-copyright-text">Сделано в .html academy © 2021</p>
+          <p class="copyright-text">Сделано в .html academy © 2021</p>
         </div>
       </div>
     </footer>
+
   </body>
+
 </html>
