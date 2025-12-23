@@ -15,7 +15,7 @@
       <header class="page-header">
         <nav class="navigation">
           <a class="logo" href="index.html" aria-current="page">
-            <img class="logo-image" src="images/logo.svg" width="137" height="56" alt="Седона">
+            <img class="logo-image" src="images/logo.svg" width="137" height="56" alt="Логотип Gllacy">
           </a>
 
           <ul class="site-menu">
@@ -50,13 +50,20 @@
             </li>
           </ul>
 
-          <a class="navigation-phone phone" href="tel:+78005558628">+7 800 555-86-28</a>
+          <ul class="navigation-phones phones">
+            <li class="phones-item">
+              <a class="phones-link" href="tel:+78005558628">+7 800 555-86-28</a>
+            </li>
+          </ul>
 
           <ul class="user-menu">
             <li class="user-menu-item">
               <a class="user-menu-link user-menu-link--search" href="#">
                 <span class="visually-hidden">Поиск</span>
               </a>
+              <form class="search-form search-form--closed" action="https://echo.htmlacademy.ru/" method="post">
+                <input class="search-form-input" type="search" name="search" placeholder="Поиск по сайту">
+              </form>
             </li>
             <li class="user-menu-item">
               <a class="user-menu-link user-menu-link--login" href="#">
@@ -88,16 +95,29 @@
                 это идеальный десерт для всей семьи.
               </p>
 
-              <a class="button promo-button" href="#">Заказать</a>
+              <a class="button button--basic promo-button" href="#">Заказать</a>
             </div>
 
             <div class="promo-slider">
               <img class="promo-slider-image" src="images/content/promo-slider/slide-big-1.png" width="327" height="507"
                 alt="Мороженое с клубничным джемом">
               <button class="promo-slider-button promo-slider-button--prev" type="button"
-                onclick="window.location.href='index-marshmallow.html'"></button>
+                onclick="window.location.href='index-marshmallow.html'">
+                <span class="visually-hidden">Предыдущий слайд</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M7.13526 2.8647C6.87557 2.605 6.45451 2.605 6.19481 2.8647C5.93511 3.12439 5.93511 3.54545 6.19481 3.80515L10.3961 8.00643L6.19477 12.2077C5.93508 12.4674 5.93508 12.8885 6.19477 13.1482C6.45447 13.4079 6.87553 13.4079 7.13523 13.1482L11.8039 8.47949C11.8049 8.47855 11.8058 8.47761 11.8068 8.47666C12.0665 8.21696 12.0665 7.79591 11.8068 7.53621L7.13526 2.8647Z" />
+                </svg>
+
+              </button>
               <button class="promo-slider-button promo-slider-button--next" type="button"
-                onclick="window.location.href='index-banana.html'"></button>
+                onclick="window.location.href='index-banana.html'">
+                <span class="visually-hidden">Следующий слайд</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path
+                    d="M7.13526 2.8647C6.87557 2.605 6.45451 2.605 6.19481 2.8647C5.93511 3.12439 5.93511 3.54545 6.19481 3.80515L10.3961 8.00643L6.19477 12.2077C5.93508 12.4674 5.93508 12.8885 6.19477 13.1482C6.45447 13.4079 6.87553 13.4079 7.13523 13.1482L11.8039 8.47949C11.8049 8.47855 11.8058 8.47761 11.8068 8.47666C12.0665 8.21696 12.0665 7.79591 11.8068 7.53621L7.13526 2.8647Z" />
+                </svg>
+              </button>
             </div>
 
             <div class="promo-slider-previews previews">
@@ -111,13 +131,25 @@
               </div>
             </div>
 
-            <div class="promo-slider-controls">
-              <button class="promo-slider-control promo-slider-control--active" type="button"></button>
-              <button class="promo-slider-control" type="button"
-                onclick="window.location.href='index-banana.html'"></button>
-              <button class="promo-slider-control" type="button"
-                onclick="window.location.href='index-marshmallow.html'"></button>
-            </div>
+            <ul class="promo-slider-controls controls">
+              <li class="controls-item">
+                <button class="controls-bullet controls-bullet--active" type="button" tabindex="-1">
+                  <span class="visually-hidden">Первый слайд. Текущий</span>
+                </button>
+              </li>
+
+              <li class="controls-item">
+                <button class="controls-bullet" type="button" onclick="window.location.href='index-banana.html'">
+                  <span class="visually-hidden">Второй слайд</span>
+                </button>
+              </li>
+
+              <li class="controls-item">
+                <button class="controls-bullet" type="button" onclick="window.location.href='index-marshmallow.html'">
+                  <span class="visually-hidden">Третий слайд</span>
+                </button>
+              </li>
+            </ul>
 
             <ul class="promo-social social">
               <li class="social-item">
@@ -149,7 +181,7 @@
               <h3 class="gift-card-title">Малинка даром!</h3>
               <p class="gift-card-description">При покупке 2 кг любого фруктового<br>мороженого добавим в ваш заказ<br>
                 банку малинового варенья бесплатно.</p>
-              <a class="button" href="#">Хочу подарок</a>
+              <a class="button button--alternate" href="#">Хочу подарок</a>
             </article>
 
             <article class="gift-card gift-card--marshmallow">
@@ -157,7 +189,7 @@
               <p class="gift-card-description">При покупке 2 кг пломбира добавим<br> в ваш заказ упаковку нежных
                 зефирок<br>
                 совершенно бесплатно.</p>
-              <a class="button" href="#">Хочу подарок</a>
+              <a class="button button--alternate" href="#">Хочу подарок</a>
             </article>
           </div>
         </section>
@@ -407,6 +439,21 @@
         </div>
       </footer>
     </div>
+    <script>
+      (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+          const button = document.querySelector('.user-menu-link--search');
+          button && button.addEventListener('click', function (e) {
+            e.preventDefault();
+            const wasActive = this.classList.contains('user-menu-link--active');
+            this.classList.toggle('user-menu-link--active');
+            if (wasActive) {
+              this.blur();
+            }
+          });
+        });
+      })();
+    </script>
   </body>
 
 </html>
