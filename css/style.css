@@ -803,10 +803,9 @@ img {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(105px, auto) auto auto;
-  justify-content: space-between;
+  grid-template-columns: 343px auto 250px;
+  gap: 20px;
   align-items: start;
-
 }
 
 .footer-social {}
@@ -821,7 +820,7 @@ img {
   list-style-type: none;
 
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: repeat(2, fit-content(265px));
   gap: 6px 0;
 }
 
@@ -844,13 +843,46 @@ img {
   line-height: 20px;
 }
 
+.footer-navigation-link:hover {
+  text-decoration: underline;
+}
+
+.footer-navigation-link:focus-visible {
+  outline-offset: 4px;
+}
+
+.footer-navigation-link:active {
+  opacity: 0.5;
+}
+
 .footer-copyright {
   width: fit-content;
   justify-self: end;
   margin: 0;
 }
 
-.copyright {}
+.copyright {
+  position: relative;
+}
+
+.copyright::after {
+  content: "";
+  position: absolute;
+  border-radius: var(--border-radius);
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+}
+
+.copyright:hover::after {
+  background-color: rgba(252, 252, 252, 0.15);
+  z-index: -1;
+}
+
+.copyright:active::after {
+  background-color: rgba(252, 252, 252, 0.4);
+}
 
 .copyright-logo {
   display: block;
@@ -864,11 +896,23 @@ img {
 }
 
 .copyright-link {
+  position: static;
   color: inherit;
 
   text-decoration-color: rgba(45, 52, 64, 0.5);
   text-underline-offset: 3px;
 }
+
+.copyright-link::after {
+  content: "";
+  position: absolute;
+  border-radius: var(--border-radius);
+  top: -25%;
+  left: -10%;
+  width: 120%;
+  height: 150%;
+}
+
 
 /* main index*/
 
@@ -1055,7 +1099,7 @@ img {
   background-color: rgba(252, 220, 146, 0.4);
 }
 
-.previews-link  {
+.previews-link {
   position: static;
   display: block;
 }
@@ -1652,8 +1696,14 @@ img {
   margin: 0 0 24px 0;
 }
 
-.contacts-phone {
+.contacts-list {
   margin: 0 0 32px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.contacts-item:not(:last-child) {
+  margin: 0 0 20px 0;
 }
 
 .contacts-label {
@@ -1662,6 +1712,7 @@ img {
 }
 
 .contacts-text {
+  position: relative;
   display: block;
   margin: 0;
   font-weight: 700;
@@ -1672,6 +1723,20 @@ img {
   color: inherit;
 }
 
+.contacts-link:hover {
+  text-decoration: underline;
+}
+
+.contacts-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120%;
+  height: 160%;
+  top: -30%;
+  left: -10%;
+}
+
 .contacts-time {
   color: var(--dark);
   font-size: 14px;
@@ -1680,10 +1745,8 @@ img {
 }
 
 .contacts-button {
-  background-color: var(--extra-bright);
-  border: none;
-  outline: 4px solid rgba(255, 47, 100, 0.3);
-  color: var(--extra-light);
-  cursor: pointer;
+  max-width: 100%;
   padding: 12px 33px 12px 32px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
