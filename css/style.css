@@ -1260,11 +1260,11 @@ img {
 .blog-new {
   background-color: var(--white);
   border-radius: var(--border-radius);
-  padding: 33px 32px 32px;
+  padding: 33px 220px 32px 32px;
+  background-color: #fff;
   background-image: url("../images/background/news.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center right;
+  background-position: left -110px;
 }
 
 .blog-card {}
@@ -1272,7 +1272,7 @@ img {
 .blog-card-tag {
   margin: 0 0 13px 0;
   line-height: 20px;
-
+  max-width: 250px;
 }
 
 .blog-card-title {
