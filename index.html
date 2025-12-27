@@ -23,7 +23,8 @@
               <details class="site-menu-submenu submenu">
                 <summary class="submenu-button">
                   Каталог
-                  <svg class="submenu-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <svg class="submenu-icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
                     <path
                       d="M3.8 6.2a.67.67 0 1 0-.93.94l4.66 4.66a.66.66 0 0 0 .95 0l4.66-4.66a.67.67 0 0 0-.94-.94L8 10.39l-4.2-4.2Z" />
                   </svg>
@@ -480,38 +481,32 @@
                 <div class="delivery-form-grid">
                   <label class="delivery-field field delivery-field--date">
                     <span class="field-label">Дата</span>
-                    <button class="info-button" type="button">
-                      <span class="visually-hidden">Подсказка</span>
-                    </button>
-                    <div class="tooltip">
-                      <p class="tooltip-text">
-                        Введите желаемую дату доставки
-                      </p>
-                    </div>
-                    <input class="field-input" name="date" type="text" placeholder="01.04.2020" required>
+                    <i class="tooltip" tabindex="0" role="tooltip" aria-labelledby="tooltip-info-date">
+                      <span class="tooltip-text" id="tooltip-info-date">
+                        Введите желаемую дату доставки в формате ДД.ММ.ГГГГ
+                      </span>
+                    </i>
+                    <input class="field-input input" name="date" type="text" placeholder="01.04.2020" required>
                   </label>
 
                   <label class="delivery-form-field field delivery-form-field--phone">
                     <span class="field-label">Телефон</span>
-                    <input class="field-input" name="phone" type="tel" placeholder="+7 800 999-00-00" required>
+                    <input class="field-input input" autocomplete="tel" name="phone" type="tel" placeholder="+7 800 999-00-00" required>
                   </label>
 
                   <label class="delivery-field field delivery-field--destination">
                     <span class="field-label">Адрес</span>
-                    <button class="info-button" type="button">
-                      <span class="visually-hidden">Подсказка</span>
-                    </button>
-                    <div class="tooltip">
-                      <p class="tooltip-text">
+                    <i class="tooltip" tabindex="0" role="tooltip" aria-labelledby="tooltip-info-date">
+                      <span class="tooltip-text" id="tooltip-info-date">
                         Введите название улицы, дома и квартиры
-                      </p>
-                    </div>
-                    <input class="field-input" name="destination" type="text" placeholder="ул. Большая Конюшенная, 19/8"
+                      </span>
+                    </i>
+                    <input class="field-input input" name="destination" type="text" placeholder="ул. Большая Конюшенная, 19/8"
                       required>
                   </label>
                 </div>
 
-                <button class="delivery-button button" type="submit">Отправить</button>
+                <button class="delivery-button button button--alternate" type="submit">Отправить</button>
               </form>
             </div>
 

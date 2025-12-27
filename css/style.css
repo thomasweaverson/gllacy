@@ -1863,15 +1863,7 @@ img {
 }
 
 .delivery-button {
-  display: block;
   margin: 0 auto;
-
-  background-color: var(--extra-bright);
-  border: none;
-  outline: 4px solid rgba(255, 47, 100, 0.3);
-  color: var(--extra-light);
-
-  cursor: pointer;
 }
 
 .field-label {
@@ -1885,41 +1877,62 @@ img {
 
 .field-input {
   padding: 13px 16px 13px 15px;
-
-  border: 1px solid var(--neutral);
-  border-radius: 4px;
-
-  width: 100%;
-
-  font-family: inherit;
-  font-size: 16px;
-  line-height: 20px;
-  color: var(--extra-dark);
 }
 
-.field-input::placeholder {
-  color: var(--neutral);
-}
-
-.info-button {
+.tooltip {
   position: relative;
   top: 1px;
-  padding: 0;
-  border: none;
+  display: inline-block;
   width: 14px;
   height: 14px;
-
   background-color: transparent;
   background-image: url("../images/icons/info.svg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
-.tooltip {
+.tooltip-text {
   display: none;
+  position: absolute;
+  left: 23px;
+  top: -12px;
+  width: max-content;
+  max-width: 163px;
+  padding: 10px 8px 10px 8px;
+  background-color: var(--extra-light);
+  border: 1px solid #aaaaaa;
+  border-radius: 2px;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: normal;
+  color: var(--dark);
 }
 
-.tooltip-text {}
+.tooltip-text::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 12px;
+  top: 0;
+  left: -12px;
+}
+
+.tooltip-text::before {
+  content: "";
+  position: absolute;
+  height: 9px;
+  width: 9px;
+  background-color: var(--extra-light);
+  border-bottom: 1px solid #aaaaaa;
+  border-left: 1px solid #aaaaaa;
+  top: 13px;
+  left: -5px;
+  transform: rotate(45deg);
+}
+
+.tooltip:hover .tooltip-text {
+  display: block;
+}
 
 .contacts {
   border-radius: var(--border-radius);
