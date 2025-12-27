@@ -491,7 +491,8 @@
 
                   <label class="delivery-form-field field delivery-form-field--phone">
                     <span class="field-label">Телефон</span>
-                    <input class="field-input input" autocomplete="tel" name="phone" type="tel" placeholder="+7 800 999-00-00" required>
+                    <input class="field-input input" autocomplete="tel" name="phone" type="tel"
+                      placeholder="+7 800 999-00-00" required>
                   </label>
 
                   <label class="delivery-field field delivery-field--destination">
@@ -501,8 +502,8 @@
                         Введите название улицы, дома и квартиры
                       </span>
                     </i>
-                    <input class="field-input input" name="destination" type="text" placeholder="ул. Большая Конюшенная, 19/8"
-                      required>
+                    <input class="field-input input" name="destination" type="text"
+                      placeholder="ул. Большая Конюшенная, 19/8" required>
                   </label>
                 </div>
 
@@ -582,30 +583,43 @@
         </div>
       </footer>
     </div>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        document.querySelector('.user-menu')?.addEventListener('click', (e) => {
-          const clickedLink = e.target.closest('.user-menu-link');
 
-          if (clickedLink) {
-            e.preventDefault();
+    <div class="modal-overlay modal-overlay--hidden">
+      <div class="modal modal-search" data-test="modal">
+        <button class="modal-close-button" type="button">
+          <span class="visually-hidden">Закрыть</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M5.05513 4.11177C4.79478 3.85142 4.37212 3.85142 4.11177 4.11177C3.85142 4.37212 3.85142 4.79478 4.11177 5.05513L9.05561 9.99897L4.11177 14.9428C3.85144 15.2031 3.85149 15.6258 4.11177 15.8862C4.37212 16.1465 4.79478 16.1465 5.05513 15.8862L9.99897 10.9423L14.9428 15.8862C15.2032 16.1465 15.6258 16.1465 15.8862 15.8862C16.1465 15.6258 16.1465 15.2032 15.8862 14.9428L10.9423 9.99897L15.8862 5.05513C16.1465 4.79478 16.1465 4.37212 15.8862 4.11177C15.6258 3.85149 15.2031 3.85144 14.9428 4.11177L9.99897 9.05561L5.05513 4.11177Z" />
+          </svg>
 
-            const links = e.currentTarget.querySelectorAll('.user-menu-link');
+        </button>
 
-            if (clickedLink.classList.contains('user-menu-link--active')) {
-              clickedLink.classList.remove('user-menu-link--active');
-              clickedLink.blur();
-            } else {
-              links.forEach(link => {
-                link.classList.remove('user-menu-link--active');
-                link.blur();
-              });
-              clickedLink.classList.add('user-menu-link--active');
-            }
-          }
-        });
-      });
-    </script>
+        <section class="modal-content">
+          <h2 class="modal-title">Мы обязательно ответим вам!</h2>
+
+          <form class="feedback-form" action="https://echo.htmlacademy.ru/" method="post">
+            <label class="feedback-field">
+              <span class="visually-hidden">Ваше имя и фамилия</span>
+              <input class="feedback-input input" type="text" name="name" placeholder="Имя и фамилия" required>
+            </label>
+
+            <label class="feedback-field">
+              <span class="visually-hidden">Ваша электронная почта</span>
+              <input class="feedback-input input" type="email" name="email" placeholder="email@example.com" required>
+            </label>
+
+            <label class="feedback-field">
+              <span class="visually-hidden">Любые ваши пожелания</span>
+              <textarea class="feedback-textarea input" name="message" placeholder="В свободной форме"
+                rows="6"></textarea>
+            </label>
+            <button class="button button--alternate modal-submit" type="submit">Отправить</button>
+          </form>
+        </section>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
   </body>
 
 </html>
