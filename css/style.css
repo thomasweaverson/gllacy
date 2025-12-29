@@ -539,8 +539,8 @@ img {
 
 .navigation {
   display: grid;
-  grid-template-columns: 1fr 200px 267px;
-  gap: 5px;
+  grid-template-columns: 1fr 200px max-content;
+  gap: 16px;
 }
 
 .logo {
@@ -737,7 +737,7 @@ img {
 
 .phones-link {
   display: block;
-  padding: 8px 12px;
+  padding: 8px 1px;
   border-radius: 30px;
   text-decoration: none;
   color: inherit;
@@ -746,20 +746,20 @@ img {
 }
 
 .phones-link:hover {
-  background-color: rgba(252, 252, 252, 0.5);
+  color: var(--dark)
 }
 
 .phones-link:focus-visible {
-  background-color: rgba(252, 252, 252, 0.5);
   outline: 2px solid var(--extra-dark);
-  outline-offset: -2px;
+  outline-offset: 2px;
 }
 
 .phones-link:active {
-  background-color: var(--extra-light);
+  opacity: 0.6;
 }
 
 .user-menu {
+  max-width: 294px;
   margin: 0;
   padding: 2px 0 0 0;
   list-style-type: none;
@@ -1261,7 +1261,7 @@ img {
 }
 
 /*! макет для первой страницы немного бракован, правило ниже только для pixel-perfect */
-.page-body--strawberry .promo-grid {
+.promo-grid--fix {
   grid-template-columns: 70fr 455fr 367fr 278fr;
 }
 
