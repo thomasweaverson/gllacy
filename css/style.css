@@ -1403,6 +1403,10 @@ img {
   opacity: 1;
 }
 
+.previews-link:active .previews-image {
+  opacity: 0.4;
+}
+
 .previews-image {
   display: block;
   opacity: 0.4;
