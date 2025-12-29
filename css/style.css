@@ -489,15 +489,6 @@ img {
   display: block;
 }
 
-.popover::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  top: -8px;
-  right: 0;
-}
-
 .popover--search {
   width: 356px;
   padding: 24px 16px;
@@ -796,6 +787,15 @@ img {
   line-height: 20px;
 
   fill: var(--extra-dark);
+}
+
+.user-menu-link::after {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: 0;
+  width: calc( 100% + 14px);
+  height: 150%;
 }
 
 .login-icon,
