@@ -1967,7 +1967,8 @@ img {
   transform: rotate(45deg);
 }
 
-.tooltip:hover .tooltip-text {
+.tooltip:hover .tooltip-text,
+.tooltip:focus .tooltip-text {
   display: block;
 }
 
