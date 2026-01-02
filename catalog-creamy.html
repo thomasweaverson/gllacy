@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин Глейси – каталог товаров. Сливочное мороженое</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon-152.png">
   </head>
 
   <body class="page-body page-body--strawberry">
@@ -73,7 +75,9 @@
               <div class="popover popover--search">
                 <h3 class="visually-hidden">Форма поиска по сайту</h3>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <input class="search-form-input input" type="search" name="search" placeholder="Поиск по сайту">
+                  <label class="visually-hidden" for="search">Поиск по сайту</label>
+                  <input class="search-form-input input" type="search" name="search" placeholder="Поиск по сайту"
+                    id="search">
                   <button class="search-form-button close-button" type="reset">
                     <span class="visually-hidden">Сбросить поиск</span>
                   </button>
@@ -167,9 +171,9 @@
                   </ul>
 
                   <div class="cart-footer">
-                    <button class="button button--alternate cart-button" type="button">
+                    <a class="button button--alternate cart-button" href="#">
                       Оформить заказ
-                    </button>
+                    </a>
                     <p class="cart-total">
                       <span class="cart-total-title">Итого:</span>
                       <span class="cart-total-value">790</span> ₽
@@ -617,7 +621,7 @@
           </div>
 
           <div class="pagination-wrapper">
-            <button class="pagination-show-more show-more button button--basic" type="button">Показать еще</button>
+            <a class="pagination-show-more show-more button button--basic" href="#">Показать еще</a>
             <nav class="pagination">
               <h2 class="visually-hidden">Пагинация</h2>
               <ul class="pagination-list">

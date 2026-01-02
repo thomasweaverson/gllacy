@@ -1475,12 +1475,12 @@ img {
   pointer-events: none;
 }
 
-.controls-bullet:not(:disabled):hover {
+.controls-bullet:not(:disabled, .controls-bullet--active):hover {
   outline: 1px solid var(--extra-light);
   outline-offset: -1px;
 }
 
-.controls-bullet:not(:disabled):active {
+.controls-bullet:not(:disabled, .controls-bullet--active):active {
   background-color: rgba(252, 252, 252, 0.5);
   outline-color: rgba(252, 252, 252, 0.5);
 }
