@@ -71,9 +71,9 @@
                 </svg>
               </a>
               <div class="popover popover--search">
-                <h3 class="visually-hidden">Форма поиска по сайту</h3>
+                <h3 class="visually-hidden">Форма поиска по сайту</h3>
                 <form class="search-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <input class="search-form-input input" type="search" name="search" placeholder="Поиск по сайту">
+                  <input class="search-form-input input" type="search" name="search" placeholder="Поиск по сайту">
                   <button class="search-form-button close-button" type="reset">
                     <span class="visually-hidden">Сбросить поиск</span>
                   </button>
@@ -132,9 +132,7 @@
               </a>
 
               <div class="popover popover--cart">
-                <!-- for empty cart - add class "cart--empty"-->
                 <section class="cart">
-                  <!-- <h3 class="cart-title">Ваша корзина пока пуста</h3> -->
                   <h3 class="cart-title">Корзина</h3>
 
                   <ul class="cart-products">
@@ -206,14 +204,14 @@
         <section class="filters">
           <h2 class="visually-hidden">Фильтры</h2>
 
-          <form class="filter-form">
+          <form class="filter-form" action="https://echo.htmlacademy.ru" method="get">
             <div class="filter-wrapper">
               <fieldset class="filter-fieldset">
                 <legend class="filter-legend">Сортировка:</legend>
                 <select class="filter-select" name="sorting">
-                  <option selected>по популярности</option>
-                  <option>сначала недорогие</option>
-                  <option>сначала дорогие</option>
+                  <option value="popular" selected>по популярности</option>
+                  <option value="cheaper">сначала недорогие</option>
+                  <option value="expensive">сначала дорогие</option>
                 </select>
               </fieldset>
 
@@ -284,37 +282,96 @@
 
                 <ul class="filter-list filter-list--fillers">
                   <li class="filter-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="filler" value="chocolate" checked>
-                      <span class="control-lead">шоколадные</span>
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="filler" value="chocolate"
+                      id="chocolate" checked>
+                    <label class="checkbox-label" for="chocolate">
+                      <svg class="checkbox-icon checkbox-icon--empty" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M1.61516 1.61532C1.79572 1.43477 2.0406 1.33333 2.29593 1.33333H13.7029C13.9447 1.33333 14.0431 1.36186 14.0976 1.38594C14.1553 1.41144 14.2282 1.45981 14.3837 1.61532C14.5909 1.82251 14.6657 2.04757 14.6657 2.29609V13.6647C14.665 13.677 14.6646 13.6895 14.6646 13.702C14.6646 13.9574 14.5632 14.2022 14.3826 14.3828C14.2021 14.5633 13.9572 14.6648 13.7019 14.6648H2.29593C2.0406 14.6648 1.79572 14.5633 1.61516 14.3828C1.43461 14.2022 1.33318 13.9574 1.33318 13.702V2.29609C1.33318 2.04075 1.43461 1.79587 1.61516 1.61532ZM15.8381 14.5437C15.7238 14.834 15.5504 15.1007 15.3255 15.3256C14.8949 15.7562 14.3108 15.9981 13.7019 15.9981H2.29593C1.68697 15.9981 1.10296 15.7562 0.672356 15.3256C0.241755 14.895 -0.000152588 14.311 -0.000152588 13.702V2.29609C-0.000152588 1.68713 0.241756 1.10311 0.672356 0.672508C0.898345 0.446519 1.16659 0.272503 1.45852 0.158153C1.57476 0.0595056 1.72526 0 1.88966 0H2.29593H13.7029C14.0404 0 14.3458 0.0379078 14.6365 0.16636C14.924 0.293391 15.1376 0.483641 15.3265 0.672511C15.808 1.15407 15.999 1.72989 15.999 2.29609V14.1094C15.999 14.2753 15.9384 14.427 15.8381 14.5437Z" />
+                      </svg>
+
+                      <svg class="checkbox-icon checkbox-icon--checked" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M1.62 1.62a.96.96 0 0 1 .68-.29h8.95a.67.67 0 1 0 0-1.33H2.3A2.3 2.3 0 0 0 0 2.3v11.4A2.3 2.3 0 0 0 2.3 16h11.4a2.3 2.3 0 0 0 2.3-2.3V8a.67.67 0 0 0-1.34 0v5.7a.96.96 0 0 1-.96.97H2.3a.96.96 0 0 1-.97-.97V2.3c0-.26.1-.5.29-.68Zm14.2.32a.67.67 0 1 0-.97-.92L7.6 8.66 5.78 6.73a.67.67 0 0 0-.97.91l2.32 2.45a.67.67 0 0 0 .97 0l7.72-8.15Z" />
+                      </svg>
+                      <span class="checkbox-title">шоколадные</span>
                     </label>
                   </li>
 
                   <li class="filter-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="filler" value="sugar-sprinkles" checked>
-                      <span class="control-lead">сахарные посыпки</span>
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="filler" value="sugar-sprinkles"
+                      id="sugar-sprinkles" checked>
+                    <label class="checkbox-label" for="sugar-sprinkles">
+                      <svg class="checkbox-icon checkbox-icon--empty" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M1.61516 1.61532C1.79572 1.43477 2.0406 1.33333 2.29593 1.33333H13.7029C13.9447 1.33333 14.0431 1.36186 14.0976 1.38594C14.1553 1.41144 14.2282 1.45981 14.3837 1.61532C14.5909 1.82251 14.6657 2.04757 14.6657 2.29609V13.6647C14.665 13.677 14.6646 13.6895 14.6646 13.702C14.6646 13.9574 14.5632 14.2022 14.3826 14.3828C14.2021 14.5633 13.9572 14.6648 13.7019 14.6648H2.29593C2.0406 14.6648 1.79572 14.5633 1.61516 14.3828C1.43461 14.2022 1.33318 13.9574 1.33318 13.702V2.29609C1.33318 2.04075 1.43461 1.79587 1.61516 1.61532ZM15.8381 14.5437C15.7238 14.834 15.5504 15.1007 15.3255 15.3256C14.8949 15.7562 14.3108 15.9981 13.7019 15.9981H2.29593C1.68697 15.9981 1.10296 15.7562 0.672356 15.3256C0.241755 14.895 -0.000152588 14.311 -0.000152588 13.702V2.29609C-0.000152588 1.68713 0.241756 1.10311 0.672356 0.672508C0.898345 0.446519 1.16659 0.272503 1.45852 0.158153C1.57476 0.0595056 1.72526 0 1.88966 0H2.29593H13.7029C14.0404 0 14.3458 0.0379078 14.6365 0.16636C14.924 0.293391 15.1376 0.483641 15.3265 0.672511C15.808 1.15407 15.999 1.72989 15.999 2.29609V14.1094C15.999 14.2753 15.9384 14.427 15.8381 14.5437Z" />
+                      </svg>
+
+                      <svg class="checkbox-icon checkbox-icon--checked" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M1.62 1.62a.96.96 0 0 1 .68-.29h8.95a.67.67 0 1 0 0-1.33H2.3A2.3 2.3 0 0 0 0 2.3v11.4A2.3 2.3 0 0 0 2.3 16h11.4a2.3 2.3 0 0 0 2.3-2.3V8a.67.67 0 0 0-1.34 0v5.7a.96.96 0 0 1-.96.97H2.3a.96.96 0 0 1-.97-.97V2.3c0-.26.1-.5.29-.68Zm14.2.32a.67.67 0 1 0-.97-.92L7.6 8.66 5.78 6.73a.67.67 0 0 0-.97.91l2.32 2.45a.67.67 0 0 0 .97 0l7.72-8.15Z" />
+                      </svg>
+                      <span class="checkbox-title">сахарные посыпки</span>
                     </label>
                   </li>
 
                   <li class="filter-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="filler" value="fruits">
-                      <span class="control-lead">фрукты</span>
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="filler" value="fruits"
+                      id="fruits">
+                    <label class="checkbox-label" for="fruits">
+                      <svg class="checkbox-icon checkbox-icon--empty" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M1.61516 1.61532C1.79572 1.43477 2.0406 1.33333 2.29593 1.33333H13.7029C13.9447 1.33333 14.0431 1.36186 14.0976 1.38594C14.1553 1.41144 14.2282 1.45981 14.3837 1.61532C14.5909 1.82251 14.6657 2.04757 14.6657 2.29609V13.6647C14.665 13.677 14.6646 13.6895 14.6646 13.702C14.6646 13.9574 14.5632 14.2022 14.3826 14.3828C14.2021 14.5633 13.9572 14.6648 13.7019 14.6648H2.29593C2.0406 14.6648 1.79572 14.5633 1.61516 14.3828C1.43461 14.2022 1.33318 13.9574 1.33318 13.702V2.29609C1.33318 2.04075 1.43461 1.79587 1.61516 1.61532ZM15.8381 14.5437C15.7238 14.834 15.5504 15.1007 15.3255 15.3256C14.8949 15.7562 14.3108 15.9981 13.7019 15.9981H2.29593C1.68697 15.9981 1.10296 15.7562 0.672356 15.3256C0.241755 14.895 -0.000152588 14.311 -0.000152588 13.702V2.29609C-0.000152588 1.68713 0.241756 1.10311 0.672356 0.672508C0.898345 0.446519 1.16659 0.272503 1.45852 0.158153C1.57476 0.0595056 1.72526 0 1.88966 0H2.29593H13.7029C14.0404 0 14.3458 0.0379078 14.6365 0.16636C14.924 0.293391 15.1376 0.483641 15.3265 0.672511C15.808 1.15407 15.999 1.72989 15.999 2.29609V14.1094C15.999 14.2753 15.9384 14.427 15.8381 14.5437Z" />
+                      </svg>
+
+                      <svg class="checkbox-icon checkbox-icon--checked" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M1.62 1.62a.96.96 0 0 1 .68-.29h8.95a.67.67 0 1 0 0-1.33H2.3A2.3 2.3 0 0 0 0 2.3v11.4A2.3 2.3 0 0 0 2.3 16h11.4a2.3 2.3 0 0 0 2.3-2.3V8a.67.67 0 0 0-1.34 0v5.7a.96.96 0 0 1-.96.97H2.3a.96.96 0 0 1-.97-.97V2.3c0-.26.1-.5.29-.68Zm14.2.32a.67.67 0 1 0-.97-.92L7.6 8.66 5.78 6.73a.67.67 0 0 0-.97.91l2.32 2.45a.67.67 0 0 0 .97 0l7.72-8.15Z" />
+                      </svg>
+                      <span class="checkbox-title">фрукты</span>
                     </label>
                   </li>
 
                   <li class="filter-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="filler" value="syrups">
-                      <span class="control-lead">сиропы</span>
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="filler" value="syrups"
+                      id="syrups">
+                    <label class="checkbox-label" for="syrups">
+                      <svg class="checkbox-icon checkbox-icon--empty" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M1.61516 1.61532C1.79572 1.43477 2.0406 1.33333 2.29593 1.33333H13.7029C13.9447 1.33333 14.0431 1.36186 14.0976 1.38594C14.1553 1.41144 14.2282 1.45981 14.3837 1.61532C14.5909 1.82251 14.6657 2.04757 14.6657 2.29609V13.6647C14.665 13.677 14.6646 13.6895 14.6646 13.702C14.6646 13.9574 14.5632 14.2022 14.3826 14.3828C14.2021 14.5633 13.9572 14.6648 13.7019 14.6648H2.29593C2.0406 14.6648 1.79572 14.5633 1.61516 14.3828C1.43461 14.2022 1.33318 13.9574 1.33318 13.702V2.29609C1.33318 2.04075 1.43461 1.79587 1.61516 1.61532ZM15.8381 14.5437C15.7238 14.834 15.5504 15.1007 15.3255 15.3256C14.8949 15.7562 14.3108 15.9981 13.7019 15.9981H2.29593C1.68697 15.9981 1.10296 15.7562 0.672356 15.3256C0.241755 14.895 -0.000152588 14.311 -0.000152588 13.702V2.29609C-0.000152588 1.68713 0.241756 1.10311 0.672356 0.672508C0.898345 0.446519 1.16659 0.272503 1.45852 0.158153C1.57476 0.0595056 1.72526 0 1.88966 0H2.29593H13.7029C14.0404 0 14.3458 0.0379078 14.6365 0.16636C14.924 0.293391 15.1376 0.483641 15.3265 0.672511C15.808 1.15407 15.999 1.72989 15.999 2.29609V14.1094C15.999 14.2753 15.9384 14.427 15.8381 14.5437Z" />
+                      </svg>
+
+                      <svg class="checkbox-icon checkbox-icon--checked" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M1.62 1.62a.96.96 0 0 1 .68-.29h8.95a.67.67 0 1 0 0-1.33H2.3A2.3 2.3 0 0 0 0 2.3v11.4A2.3 2.3 0 0 0 2.3 16h11.4a2.3 2.3 0 0 0 2.3-2.3V8a.67.67 0 0 0-1.34 0v5.7a.96.96 0 0 1-.96.97H2.3a.96.96 0 0 1-.97-.97V2.3c0-.26.1-.5.29-.68Zm14.2.32a.67.67 0 1 0-.97-.92L7.6 8.66 5.78 6.73a.67.67 0 0 0-.97.91l2.32 2.45a.67.67 0 0 0 .97 0l7.72-8.15Z" />
+                      </svg>
+                      <span class="checkbox-title">сиропы</span>
                     </label>
                   </li>
 
                   <li class="filter-item">
-                    <label class="control">
-                      <input class="control-input visually-hidden" type="checkbox" name="filler" value="jams">
-                      <span class="control-lead">джемы</span>
+                    <input class="checkbox-input visually-hidden" type="checkbox" name="filler" value="jams" id="jams">
+                    <label class="checkbox-label" for="jams">
+                      <svg class="checkbox-icon checkbox-icon--empty" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                          d="M1.61516 1.61532C1.79572 1.43477 2.0406 1.33333 2.29593 1.33333H13.7029C13.9447 1.33333 14.0431 1.36186 14.0976 1.38594C14.1553 1.41144 14.2282 1.45981 14.3837 1.61532C14.5909 1.82251 14.6657 2.04757 14.6657 2.29609V13.6647C14.665 13.677 14.6646 13.6895 14.6646 13.702C14.6646 13.9574 14.5632 14.2022 14.3826 14.3828C14.2021 14.5633 13.9572 14.6648 13.7019 14.6648H2.29593C2.0406 14.6648 1.79572 14.5633 1.61516 14.3828C1.43461 14.2022 1.33318 13.9574 1.33318 13.702V2.29609C1.33318 2.04075 1.43461 1.79587 1.61516 1.61532ZM15.8381 14.5437C15.7238 14.834 15.5504 15.1007 15.3255 15.3256C14.8949 15.7562 14.3108 15.9981 13.7019 15.9981H2.29593C1.68697 15.9981 1.10296 15.7562 0.672356 15.3256C0.241755 14.895 -0.000152588 14.311 -0.000152588 13.702V2.29609C-0.000152588 1.68713 0.241756 1.10311 0.672356 0.672508C0.898345 0.446519 1.16659 0.272503 1.45852 0.158153C1.57476 0.0595056 1.72526 0 1.88966 0H2.29593H13.7029C14.0404 0 14.3458 0.0379078 14.6365 0.16636C14.924 0.293391 15.1376 0.483641 15.3265 0.672511C15.808 1.15407 15.999 1.72989 15.999 2.29609V14.1094C15.999 14.2753 15.9384 14.427 15.8381 14.5437Z" />
+                      </svg>
+
+                      <svg class="checkbox-icon checkbox-icon--checked" width="16" height="16" viewBox="0 0 16 16"
+                        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path
+                          d="M1.62 1.62a.96.96 0 0 1 .68-.29h8.95a.67.67 0 1 0 0-1.33H2.3A2.3 2.3 0 0 0 0 2.3v11.4A2.3 2.3 0 0 0 2.3 16h11.4a2.3 2.3 0 0 0 2.3-2.3V8a.67.67 0 0 0-1.34 0v5.7a.96.96 0 0 1-.96.97H2.3a.96.96 0 0 1-.97-.97V2.3c0-.26.1-.5.29-.68Zm14.2.32a.67.67 0 1 0-.97-.92L7.6 8.66 5.78 6.73a.67.67 0 0 0-.97.91l2.32 2.45a.67.67 0 0 0 .97 0l7.72-8.15Z" />
+                      </svg>
+                      <span class="checkbox-title">джемы</span>
                     </label>
                   </li>
                 </ul>
@@ -406,7 +463,6 @@
               </div>
             </article>
 
-            <!--  -->
             <article class="card">
               <h3 class="card-title"><a class="card-link" href="#">Ежевика</a></h3>
               <p class="card-description">Сливочное мороженое с ежевичным джемом</p>
@@ -482,7 +538,7 @@
                 </button>
               </div>
             </article>
-            <!--  -->
+
             <article class="card">
               <h3 class="card-title"><a class="card-link" href="#">Лимон</a></h3>
               <p class="card-description">Освежающий лимонный сорбет</p>
@@ -561,7 +617,7 @@
           </div>
 
           <div class="pagination-wrapper">
-            <button class="pagination-show-more show-more button button--basic">Показать еще</button>
+            <button class="pagination-show-more show-more button button--basic" type="button">Показать еще</button>
             <nav class="pagination">
               <h2 class="visually-hidden">Пагинация</h2>
               <ul class="pagination-list">
