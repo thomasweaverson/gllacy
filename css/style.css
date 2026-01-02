@@ -1987,7 +1987,6 @@ img {
   border-radius: var(--border-radius);
   padding: 64px 763px 64px 64px;
   background-color: var(--extra-light);
-
   background-image: url("../images/background/feedback.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -2024,7 +2023,6 @@ img {
 
 .contacts-text {
   position: relative;
-  display: block;
   margin: 0;
   font-weight: 700;
   font-size: 20px;
@@ -2040,6 +2038,10 @@ img {
 
 .contacts-link:active {
   opacity: 0.6;
+}
+
+.contacts-link:focus-visible {
+  outline-offset: -5px;
 }
 
 .contacts-link::after {
